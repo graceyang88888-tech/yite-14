@@ -1,0 +1,34 @@
+[
+  {
+    "id": "c1",
+    "name": "國中全科衝刺班",
+    "category": "國中",
+    "teacher": "王牌師資群",
+    "image": "./images/6.jpg",
+    "desc": "針對會考趨勢設計，全科總複習，幫助學生穩紮穩打。"
+  },
+  {
+    "id": "c2",
+    "name": "高中英文資優班",
+    "category": "高中",
+    "teacher": "Jennifer 老師",
+    "image": "./images/9.jpg",
+    "desc": "全美語教學環境，強化聽說讀寫能力，接軌國際。"
+  },
+  {
+    "id": "c3",
+    "name": "數位邏輯程式班",
+    "category": "程式設計",
+    "teacher": "David 老師",
+    "image": "./images/7.jpg",
+    "desc": "使用 Python 入門，培養運算思維與解決問題的能力。"
+  },
+  {
+    "id": "c4",
+    "name": "國小數學思維班",
+    "category": "國小",
+    "teacher": "林老師",
+    "image": "./images/8.jpg",
+    "desc": "透過遊戲與實作，讓孩子不害怕數學，建立邏輯基礎。"
+  }
+]

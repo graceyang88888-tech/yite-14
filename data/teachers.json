@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t1",
+    "name": "張偉",
+    "subject": "數學",
+    "title": "數學名師",
+    "image": "./images/4.jpg",
+    "intro": "擁有 15 年教學經驗，擅長將複雜的公式簡單化，讓學生秒懂。"
+  },
+  {
+    "id": "t2",
+    "name": "Sarah Lin",
+    "subject": "英文",
+    "title": "英文講師",
+    "image": "./images/5.jpg",
+    "intro": "美歸碩士，教學活潑生動，強調口語互動，讓學生敢開口說英文。"
+  },
+  {
+    "id": "t3",
+    "name": "陳志豪",
+    "subject": "理化",
+    "title": "理化權威",
+    "image": "./images/2.jpg",
+    "intro": "著重實驗精神與科學原理的結合，帶領學生探索科學奧秘。"
+  }
+]

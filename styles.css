@@ -1,0 +1,122 @@
+﻿/* styles.css */
+
+/* 1. 定義全站共用參數 [cite: 31-40] */
+:root {
+    --yite-blue: #162B4E; /* 品牌主色 */
+    --yite-gold: #F2AC3E; /* 品牌強調色 */
+    --text-white: #ffffff;
+    --text-light: #ecf0f1;
+    --text-dark: #333333;
+    --main-font: "Microsoft JhengHei", sans-serif;
+    --navbar-height: 100px; /* 初始高度 (含搜尋列) */
+    --navbar-shrink-height: 70px; /* 捲動後高度 */
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: #f8f9fa;
+    margin: 0;
+    padding-top: var(--navbar-height); /* 預留 Header 空間 */
+}
+
+/* 2. SPA 主佈局 Grid 系統 [cite: 73-75] */
+.main-layout {
+    display: grid;
+    /* Desktop: 左側固定 280px，右側自適應 */
+    grid-template-columns: 280px minmax(0, 1fr);
+    min-height: calc(100vh - var(--navbar-height) - 100px); /* 扣掉 Header Footer */
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+    /* 某些頁面 (如首頁) 可能不需要側邊欄，可加上此 class 變全寬 */
+    .main-layout.full-width {
+        grid-template-columns: 1fr;
+    }
+
+/* Mobile RWD: 變為單欄上下排列 [cite: 75] */
+@media (max-width: 991px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 3. Header Sticky 動畫設定 [cite: 57-61] */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: var(--yite-blue);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Header 內部佈局 */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+/* Logo 設定 */
+.logo-img {
+    height: 60px;
+    transition: height 0.3s;
+}
+
+/* 右側堆疊區塊 (搜尋 + 導航) [cite: 53] */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.search-row {
+    height: 40px;
+    opacity: 1;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+/* 當 body 加上 .scrolled 類別時的樣式 (JS 控制) */
+body.scrolled header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body.scrolled .search-row {
+    height: 0; /* 高度歸零 [cite: 60] */
+    opacity: 0; /* 透明度歸零 [cite: 60] */
+    margin: 0;
+}
+
+body.scrolled .logo-img {
+    height: 50px; /* Logo 縮小 */
+}
+
+/* 手機版導航設定 [cite: 54-56] */
+@media (max-width: 991px) {
+    .header-right {
+        display: none; /* 手機版隱藏桌面導航 */
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        color: var(--yite-gold);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-menu-btn {
+        display: none; /* 桌機版隱藏漢堡 */
+    }
+}
